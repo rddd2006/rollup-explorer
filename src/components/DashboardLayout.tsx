@@ -27,6 +27,17 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
               </div>
             </div>
             <div className="flex items-center gap-3">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-xl bg-secondary hover:bg-muted transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === "light" ? (
+                  <Moon className="h-4 w-4 text-muted-foreground" />
+                ) : (
+                  <Sun className="h-4 w-4 text-muted-foreground" />
+                )}
+              </button>
               <button className="relative p-2 rounded-xl bg-secondary hover:bg-muted transition-colors">
                 <Bell className="h-4 w-4 text-muted-foreground" />
                 <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary animate-pulse-slow" />
