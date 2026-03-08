@@ -1,7 +1,8 @@
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
-import { Search, Bell } from "lucide-react";
+import { Search, Bell, Sun, Moon } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { useTheme } from "@/hooks/useTheme";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
