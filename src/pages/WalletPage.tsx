@@ -31,7 +31,7 @@ export default function WalletPage() {
               <Wallet className="h-10 w-10 text-accent-foreground" />
             </div>
             <p className="text-muted-foreground text-sm">Connect your wallet to interact with the rollup</p>
-            <Button onClick={connectWallet} className="rounded-xl px-8">
+            <Button onClick={handleConnect} className="rounded-xl px-8">
               Connect MetaMask
             </Button>
           </CardContent>
