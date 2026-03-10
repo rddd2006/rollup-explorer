@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DashboardLayout } from "@/components/DashboardLayout";
+import { WalletProvider } from "@/contexts/WalletContext";
 import Overview from "./pages/Overview";
 import WalletPage from "./pages/WalletPage";
 import DepositPage from "./pages/DepositPage";

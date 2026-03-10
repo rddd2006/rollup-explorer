@@ -2,18 +2,17 @@ import { Wallet, Copy, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { StatCard } from "@/components/StatCard";
-import { useState } from "react";
 import { toast } from "sonner";
+import { useWallet } from "@/contexts/WalletContext";
 
 export default function WalletPage() {
-  const [connected, setConnected] = useState(false);
-  const address = "0x1483...a347";
+  const { connected, connectWallet, address } = useWallet();
   const l1Balance = "2.4521";
   const l2Balance = "1.8734";
   const nonce = 14;
 
-  const connectWallet = () => {
-    setConnected(true);
+  const handleConnect = () => {
+    connectWallet();
     toast.success("Wallet connected!");
   };
 
