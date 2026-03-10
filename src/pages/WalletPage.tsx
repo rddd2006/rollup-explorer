@@ -2,18 +2,17 @@ import { Wallet, Copy, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { StatCard } from "@/components/StatCard";
-import { useState } from "react";
 import { toast } from "sonner";
+import { useWallet } from "@/contexts/WalletContext";
 
 export default function WalletPage() {
-  const [connected, setConnected] = useState(false);
-  const address = "0x1483...a347";
+  const { connected, connectWallet, address } = useWallet();
   const l1Balance = "2.4521";
   const l2Balance = "1.8734";
   const nonce = 14;
 
-  const connectWallet = () => {
-    setConnected(true);
+  const handleConnect = () => {
+    connectWallet();
     toast.success("Wallet connected!");
   };
 
@@ -32,7 +31,7 @@ export default function WalletPage() {
               <Wallet className="h-10 w-10 text-accent-foreground" />
             </div>
             <p className="text-muted-foreground text-sm">Connect your wallet to interact with the rollup</p>
-            <Button onClick={connectWallet} className="rounded-xl px-8">
+            <Button onClick={handleConnect} className="rounded-xl px-8">
               Connect MetaMask
             </Button>
           </CardContent>
